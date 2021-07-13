@@ -1,0 +1,46 @@
+:root {
+    --color_primary: #20254d;
+    --color_secondary: #31f0c7;
+    --color_tertiary: #ffffff;
+}
+html {
+    background-color: var(--color_primary);
+    height: 100%;
+    display: table;
+    margin: auto;
+}
+body {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+#rowMain {
+    height: 90vh;
+    padding-top: auto;
+    padding-bottom: auto;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.logoContainer {
+    width: 200px;
+}
+.buttonGeneral {
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--color_tertiary);
+    border: none;
+    cursor: pointer;
+}
+.buttonGeneral:hover {
+    color: var(--color_secondary);
+}
+.buttonGeneral:active {
+    filter: brightness(0.7);
+}
