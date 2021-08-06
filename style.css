@@ -3,6 +3,10 @@
     --color_secondary: #31f0c7;
     --color_tertiary: #ffffff;
 }
+@font-face {
+    font-family: Questrial-Regular;
+    src: url(assets/fonts/Questrial-Regular.ttf);
+}
 html {
     background-color: var(--color_primary);
     background: rgb(1,5,33);
@@ -11,7 +15,7 @@ html {
     color: var(--color_tertiary);
     display: table;
     margin: auto;
-    font-family: Arial;
+    font-family: Questrial-Regular;
 }
 body {
     height: 100%;
@@ -26,15 +30,21 @@ canvas {
     left: 0;
     top: 0;
     z-index: -1;
-    opacity: 25%;
+    opacity: 50%;
 }
 h1 {
-    font-size: 3em;
-    margin: 0 0 5vh 0;
+    font-size: 5em;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0 0 15vh 0;
+    color: var(--color_secondary);
 }
 h2 {
     font-size: 1em;
-    margin: 0 0 10vh 0;
+    margin: 0 0 5vh 0;
+}
+button {
+    margin-bottom: 2em;
 }
 #rowMain {
     height: 90vh;
@@ -42,12 +52,11 @@ h2 {
     padding-bottom: auto;
 }
 #columnMain {
-    justify-content: left;
+    justify-content: center;
 }
-#discordDialog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#dog {
+    width: 300px;
+    margin-bottom: 5vh;
 }
 .row {
     display: flex;
@@ -58,30 +67,33 @@ h2 {
 .column {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .logoContainer {
-    width: 300px;
+    width: 150px;
 }
 .buttonGeneral, .buttonSpecific {
     background-color: rgba(0, 0, 0, 0);
     color: var(--color_tertiary);
     border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     cursor: pointer;
-    padding: 1em 0 1em 0;
-    text-align: left;
+    margin: 0 2em 0 2em;
+    text-align: center;
     font-size: 1em;
+    width: 12em;
 }
 .buttonSpecific {
     border: 1px solid var(--color_tertiary);
     height: 2em;
-    width: 6em;
+    width: 10em;
     border-radius: 1em;
     text-align: center;
     padding: 0;
 }
 .buttonGeneral:hover, .buttonSpecific:hover {
     color: var(--color_secondary);
-    border-color: var(--color_secondary);
+    border-bottom: 1px solid rgba(49, 240, 199, 0.25);
 }
 .buttonGeneral:active, .buttonSpecific:active {
     filter: brightness(0.7);
