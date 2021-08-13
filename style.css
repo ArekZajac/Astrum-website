@@ -46,6 +46,9 @@ h2 {
 button {
     margin-bottom: 2em;
 }
+label {
+    font-family: Arial;
+}
 #rowMain {
     height: 90vh;
     padding-top: auto;
@@ -57,6 +60,12 @@ button {
 #dog {
     width: 300px;
     margin-bottom: 5vh;
+}
+#buttonForm {
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+    width: 6em;
 }
 .row {
     display: flex;
@@ -72,7 +81,7 @@ button {
 .logoContainer {
     width: 150px;
 }
-.buttonGeneral, .buttonSpecific {
+.buttonGeneral, .buttonSpecific, input[type=submit] {
     background-color: rgba(0, 0, 0, 0);
     color: var(--color_tertiary);
     border: none;
@@ -81,7 +90,7 @@ button {
     margin: 0 2em 0 2em;
     text-align: center;
     font-size: 1em;
-    width: 12em;
+    width: 8em;
 }
 .buttonSpecific {
     border: 1px solid var(--color_tertiary);
@@ -91,7 +100,7 @@ button {
     text-align: center;
     padding: 0;
 }
-.buttonGeneral:hover, .buttonSpecific:hover {
+.buttonGeneral:hover, .buttonSpecific:hover, input[type=submit]:hover {
     color: var(--color_secondary);
     border-bottom: 1px solid rgba(49, 240, 199, 0.25);
 }
@@ -102,3 +111,25 @@ button {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+    font-family: Arial;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    padding: 20px;
+  }
