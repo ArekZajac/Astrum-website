@@ -3,26 +3,30 @@
     --color_secondary: #31f0c7;
     --color_tertiary: #ffffff;
 }
+
 @font-face {
     font-family: Questrial-Regular;
     src: url(assets/fonts/Questrial-Regular.ttf);
 }
+
 html {
     background-color: var(--color_primary);
-    background: rgb(1,5,33);
-    background: linear-gradient(0deg, rgba(1,5,33,1) 0%, rgba(32,37,77,1) 100%);
+    background: rgb(1, 5, 33);
+    background: linear-gradient(0deg, rgba(1, 5, 33, 1) 0%, rgba(32, 37, 77, 1) 100%);
     height: 100%;
     color: var(--color_tertiary);
     display: table;
     margin: auto;
     font-family: Questrial-Regular;
 }
+
 body {
     height: 100%;
     display: table-cell;
     vertical-align: middle;
     animation: fadeIn 2s;
 }
+
 canvas {
     position: fixed;
     width: 100%;
@@ -32,6 +36,7 @@ canvas {
     z-index: -1;
     opacity: 50%;
 }
+
 h1 {
     font-size: 5em;
     font-weight: normal;
@@ -39,49 +44,67 @@ h1 {
     margin: 0 0 15vh 0;
     color: var(--color_secondary);
 }
+
 h2 {
     font-size: 1em;
     margin: 0 0 5vh 0;
 }
+
 button {
     margin-bottom: 2em;
 }
+
 label {
     font-family: Arial;
 }
+
+li,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #rowMain {
     height: 90vh;
     padding-top: auto;
     padding-bottom: auto;
 }
+
 #columnMain {
     justify-content: center;
 }
+
 #dog {
     width: 300px;
     margin-bottom: 5vh;
 }
+
 #buttonForm {
     margin: 0;
     margin-top: 10px;
     text-align: left;
     width: 6em;
 }
+
 .row {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
 }
+
 .column {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .logoContainer {
     width: 150px;
 }
-.buttonGeneral, .buttonSpecific, input[type=submit] {
+
+.buttonGeneral,
+.buttonSpecific,
+input[type=submit] {
     background-color: rgba(0, 0, 0, 0);
     color: var(--color_tertiary);
     border: none;
@@ -92,6 +115,7 @@ label {
     font-size: 1em;
     width: 8em;
 }
+
 .buttonSpecific {
     border: 1px solid var(--color_tertiary);
     height: 2em;
@@ -100,36 +124,258 @@ label {
     text-align: center;
     padding: 0;
 }
-.buttonGeneral:hover, .buttonSpecific:hover, input[type=submit]:hover {
+
+.buttonGeneral:hover,
+.buttonSpecific:hover,
+input[type=submit]:hover {
     color: var(--color_secondary);
     border-bottom: 1px solid rgba(49, 240, 199, 0.25);
 }
-.buttonGeneral:active, .buttonSpecific:active {
+
+.buttonGeneral:active,
+.buttonSpecific:active {
     filter: brightness(0.7);
 }
+
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
+
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical;
+    /* Allow the user to vertically resize the textarea (not horizontally) */
     font-family: Arial;
-  }
-  
-  /* Add a background color and some padding around the form */
-  .container {
+}
+
+
+/* Add a background color and some padding around the form */
+
+.container {
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     padding: 20px;
-  }
+    margin: 20px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 50vw;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.active,
+.accordion:hover {
+    background-color: #bbb;
+}
+
+.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #444;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: rgba(255, 255, 255, 0.15);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 50vw;
+}
+
+* {
+    box-sizing: border-box
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    position: relative;
+    margin: auto;
+    width: 50vw;
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--color_tertiary);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #bbb;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.mcRot {
+    object-fit: cover;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 5px;
+}
+
+#mc-head {
+    margin-bottom: 0;
+}
+
+#mc-butt {
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+#mc-disk {
+    width: 50vw;
+}
