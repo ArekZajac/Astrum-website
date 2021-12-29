@@ -11,22 +11,31 @@
 </head>
 
 <body>
-    <div class="column" id="columnMain">
-        <div class="logoContainer">
-            <img id="logo" src="assets/drawing.svg">
-        </div>
-        <h1>ASTRUM</h1>
+    <div class="column">
+        <img id="header" src="assets/images/header.svg">
+        <div class="row"></div>
+        <button class="btn_large" onclick="window.open('https://discord.gg/Jwb9G7Pjp9', '_blank')">OUR DISCORD</button>
+        <div class="row"></div>
+        <button class="btn_large" onclick="location.href='qc.html'">QUASAR CUP</button>
+        <button class="btn_large" onclick="location.href='ng.html'">NEBULA GAMES</button>
+        <button class="btn_large" onclick="location.href='pugs.html'">PUGS</button>
+        <div class="row"></div>
+        <button class="btn_large" onclick="location.href='about.html'">ABOUT US</button>
         <div class="row">
-            <button class="buttonGeneral" onclick="location.href='https://discord.gg/Jwb9G7Pjp9'">DISCORD</button>
-            <button class="buttonGeneral" onclick="location.href='https://twitter.com/astrum_org'">TWITTER</button>
-            <button class="buttonGeneral" onclick="location.href='minecraft.html'">MINECRAFT</button>
-            <button class="buttonGeneral" onclick="location.href='contact.html'">CONTACT</button>
-            <button class="buttonGeneral" onclick="location.href='about.html'">ABOUT US</button>
+            <button class="btn_small" onclick="window.open('https://twitter.com/astrum_org', '_blank')">
+                <img src="assets/images/twitter.svg">
+            </button>
+            <div class="mini_padder"></div>
+            <button class="btn_small" onclick="window.open('https://www.twitch.tv/astrum_esports', '_blank')">
+                <img src="assets/images/twitch.svg">
+            </button>
+            <div class="mini_padder"></div>
+            <button class="btn_small" onclick="window.open('https://www.youtube.com/channel/UCpM3GRVie6lbxzjL4Ml0VMw', '_blank')">
+                <img src="assets/images/youtube.svg">
+            </button>
         </div>
+
     </div>
 </body>
-<canvas></canvas>
 
 </html>
-
-<script src='star_bg.js'></script>
